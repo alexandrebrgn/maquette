@@ -3,24 +3,30 @@
 * {
     margin: 0;
     padding: 0;
-    box-shadow: 0 0 0 1px red inset;
+    /* box-shadow: 0 0 0 1px red inset; */
 }
 
 body {
     margin: 0 auto;
     background-color: #050217;
     width: 85%;
-    height: 200vh;
+    height: auto;
     font-family: "Montserrat", sans-serif;
     color: white;
 }
 
+/*_____________________________________________________________*/
+
 .navbar {
     height: 100px;
     width: 100%;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
+}
+
+.logo-image {
+    height: 4vw;
 }
 
 .tabs {
@@ -48,26 +54,61 @@ body {
     transform: translate(25%, 25%);
 }
 
-/* __________________________________________________________________ */
+@media screen and (min-width: 700px)
+{
+    .navbar {
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .tabs {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        height: 100%;
+    }
+    
+    .contact-button {
+        position: relative;
+        text-align: center;
+        height: 30px;
+        width: 120px;
+        border-radius: 999px;
+        background: linear-gradient(36deg, rgb(29, 34, 105) 0%, rgba(13,13,50,1) 100%);
+    }
+    
+    .contact-button a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-decoration: none;
+        color: white;
+        transform: translate(25%, 25%);
+    }
+}
 
+/* __________________________________________________________________ */
 
 .main-part {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-part-text {
-    width: 45%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 3rem;
+    gap: 3vw;
 }
 
 .main-part-title {
-    font-size: 3.8rem;
+    font-size: 3.8vw;
     font-weight: 400;
-    letter-spacing: -0.2rem;
+    letter-spacing: -0.2vw;
 }
 
 .main-part-title span {
@@ -76,17 +117,61 @@ body {
 
 .main-part-description {
     color: #dddddd;
+    font-size: 1.5vw;
 }
 
 .main-part-icon-container {
-    width: 45%;
+    width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .spacing {
-    height: 100px;
+    height: 10vw;
+}
+
+@media screen and (min-width: 700px)
+{
+    .main-part {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .main-part-text {
+        width: 45%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 3vw;
+    }
+    
+    .main-part-title {
+        font-size: 3.8vw;
+        font-weight: 400;
+        letter-spacing: -0.2vw;
+    }
+    
+    .main-part-title span {
+        font-weight: 600;
+    }
+    
+    .main-part-description {
+        color: #dddddd;
+        font-size: 1.5vw;
+    }
+    
+    .main-part-icon-container {
+        width: 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .spacing {
+        height: 10vw;
+    }
 }
 
 
@@ -95,19 +180,19 @@ body {
 
 .features {
     display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 2rem;
-    column-gap: 2rem;
+    justify-content: space-between;
+    flex-shrink: 1;
+    row-gap: 10vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 2vw; 
 }
 
 .feature {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    width: 25rem;
+    width: 48%;
 }
 
 .feature-icon-container {
@@ -115,9 +200,14 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(36deg, rgb(29, 34, 105) 0%, rgba(13,13,50,1) 100%);
-    width: 5rem;
-    height: 5rem;
+    width: 9vw;
+    height: 9vw;
     border-radius: 999px;
+}
+
+.feature-icon-container img {
+    height: 50%;
+    width: 50%;
 }
 
 .feature-texts {
@@ -128,16 +218,70 @@ body {
 
 .feature-title {
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 3.4vw;
 }
 
 .feature-description {
     color: #dddddd;
-    font-size:1rem;
+    font-size:2.5vw;
     font-weight: 300
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
+    .features {
+        
+    }
+
     .feature {
+        width: 35vw;
+    }
+
+    .feature-title {
+        font-size: 2vw
+    }
+
+    .feature-description {
+        font-size: 1.5vw;
+    }
+
+    .feature-icon-container {
+        height: 7vw;
+        width: 7vw;
     }
 }
+
+@media screen and (min-width: 1200px) {
+    .features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-shrink: 1;
+        row-gap: 2rem;
+        column-gap: 2rem;
+    }
+    
+    .feature {
+        gap: 2rem;
+        width: 25vw;
+    }
+    
+    .feature-icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(36deg, rgb(29, 34, 105) 0%, rgba(13,13,50,1) 100%);
+        width: 5vw;
+        height: 5vw;
+        border-radius: 999px;
+    }
+    
+    .feature-title {
+        font-size: 1.5vw;
+    }
+    
+    .feature-description {
+        font-size:1vw;
+    }
+}
+
+/*____________________________________________________________*/
